@@ -29,13 +29,13 @@ const popSound = new Audio("https://www.soundjay.com/mechanical/sounds/balloon-p
 document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM cargado, inicializando libro...");
     
-    // Referencias DOM
-    const bookCover = document.getElementById("book-cover");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-    
-    // Cargar datos en las páginas
+    // Cargar contenido
     loadPageContent();
+    
+    // Referencia a elementos UI
+    const bookCover = document.getElementById('book-cover');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
     
     // Configurar eventos
     bookCover.addEventListener("click", openBook);
@@ -51,17 +51,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Preparar elementos visuales
     prepareVisualEffects();
     
-    // Mostrar tutorial rápido
-    showQuickTutorial();
+    // Añadir botón para volver a la portada
+    addHomeButton();
+    
+    // Inicializar el overlay instructivo
+    setupInstructionOverlay();
     
     // Log para debugging
     console.log("Libro inicializado correctamente");
 });
-
-// Mostrar tutorial rápido
-function showQuickTutorial() {
-    alert("Para usar el libro:\n\n1. Toca la portada para abrirlo\n2. Desliza a la izquierda para avanzar página\n3. Desliza a la derecha para retroceder página\n4. O usa los botones abajo");
-}
 
 // Cargar el contenido en las páginas
 function loadPageContent() {
@@ -608,4 +606,81 @@ function createExplosion(x, y) {
             }, duration);
         }, Math.random() * 100);
     });
+}
+
+// Añadir botón para volver a la portada
+function addHomeButton() {
+    const bookControls = document.querySelector('.book-controls');
+    
+    // Crear el botón para volver a la portada
+    const homeButton = document.createElement('button');
+    homeButton.classList.add('nav-btn', 'home-btn');
+    homeButton.innerHTML = '<i class="fas fa-home"></i> Portada';
+    homeButton.setAttribute('aria-label', 'Volver a la portada');
+    
+    // Insertar el botón al principio de los controles
+    bookControls.insertBefore(homeButton, bookControls.firstChild);
+    
+    // Añadir evento al botón
+    homeButton.addEventListener('click', goToHomePage);
+}
+
+// Función para volver a la portada
+function goToHomePage() {
+    // Guardar la página actual antes de volver a la portada
+    const prevPage = currentPage;
+    
+    // Si ya estamos en la portada, no hacer nada
+    if (currentPage === 0) return;
+    
+    // Ocultar todas las páginas
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+        setTimeout(() => {
+            page.classList.add('hidden');
+        }, 500);
+    });
+    
+    // Cerrar el libro y mostrar la portada
+    document.querySelector('.book-cover').classList.remove('open');
+    currentPage = 0;
+    
+    // Reproducir sonido de cierre del libro
+    playSound('pageBack');
+    
+    // Actualizar navegación
+    updateNavigation();
+}
+
+// Funciones para el overlay instructivo "Javier dice"
+function setupInstructionOverlay() {
+    const overlay = document.getElementById('tutorial-overlay');
+    const closeButton = document.getElementById('close-tutorial');
+    const startButton = document.getElementById('start-reading');
+    
+    // Mostrar overlay al cargar
+    overlay.style.display = 'flex';
+    
+    // Cerrar al hacer clic en el botón cerrar
+    closeButton.addEventListener('click', hideInstructionOverlay);
+    
+    // Cerrar al hacer clic en comenzar a leer
+    startButton.addEventListener('click', hideInstructionOverlay);
+    
+    // También se puede cerrar haciendo clic fuera del contenido
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            hideInstructionOverlay();
+        }
+    });
+}
+
+function hideInstructionOverlay() {
+    const overlay = document.getElementById('tutorial-overlay');
+    overlay.classList.add('closing');
+    
+    // Quitar el overlay después de la animación
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 500); // 500ms = duración de la animación
 }

@@ -12,6 +12,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Overlay instructivo -->
+    <div class="tutorial-overlay" id="tutorial-overlay">
+        <div class="tutorial-content">
+            <div class="tutorial-header">
+                <h2><span class="javier-says">Javier dice:</span></h2>
+                <button class="close-tutorial" id="close-tutorial">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tutorial-steps">
+                <div class="tutorial-step">
+                    <div class="step-number">1</div>
+                    <p>Toca la <strong>portada</strong> del libro para abrirlo y comenzar la aventura</p>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">2</div>
+                    <p><strong>Desliza</strong> hacia los lados para pasar las páginas como en un libro real</p>
+                    <div class="gesture-demo swipe-demo">
+                        <div class="demo-page"></div>
+                        <div class="demo-hand"></div>
+                    </div>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">3</div>
+                    <p>Utiliza los <strong>botones</strong> en la parte inferior para navegar rápidamente</p>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">4</div>
+                    <p>Pulsa el botón de <strong>Portada</strong> para volver al inicio en cualquier momento</p>
+                </div>
+            </div>
+            <button class="start-reading" id="start-reading">¡Comenzar a leer!</button>
+        </div>
+    </div>
+    
     <div class="book-environment">
         <!-- Elementos decorativos del ambiente -->
         <div class="decoration top-left"></div>
