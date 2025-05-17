@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Historia de Maxi</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos decorativos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Pacifico&family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="book-environment">
+        <!-- Elementos decorativos del ambiente -->
+        <div class="decoration top-left"></div>
+        <div class="decoration top-right"></div>
+        <div class="decoration bottom-left"></div>
+        <div class="decoration bottom-right"></div>
+        
+        <!-- Contenedor principal del libro -->
+        <div class="book-container">
+            <!-- Lomo del libro -->
+            <div class="book-spine">
+                <div class="spine-title">Maxi</div>
+            </div>
+
+            <!-- Páginas del libro -->
+            <div class="book-wrapper">
+                <!-- Portada -->
+                <div class="book-cover" id="book-cover">
+                    <div class="book-cover-inner">
+                        <div class="cover-decoration">
+                            <div class="cobreloa-shield">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Escudo_cobreloa.svg/2072px-Escudo_cobreloa.svg.png" alt="Cobreloa">
+                            </div>
+                            <div class="cover-pattern"></div>
+                        </div>
+                        <div class="cover-content">
+                            <h1 class="book-title">La Historia de Maxi</h1>
+                            <div class="book-subtitle">Un viaje por nuestros recuerdos</div>
+                            
+                            <div class="sparkle-container">
+                                <div class="sparkle s1"></div>
+                                <div class="sparkle s2"></div>
+                                <div class="sparkle s3"></div>
+                            </div>
+                            
+                            <div class="cover-footer">
+                                <p>Haz clic para abrir</p>
+                                <i class="fas fa-hand-pointer pulse"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Páginas interiores -->
+                <div class="pages" id="pages">
+                    <!-- Página de introducción -->
+                    <div class="page intro-page" id="intro-page">
+                        <div class="page-content">
+                            <div class="intro-title">Para Maxi</div>
+                            <div class="intro-text">
+                                <p>Este libro contiene algunos de nuestros mejores momentos juntos...</p>
+                                <p>Cada página es un recuerdo especial, cada foto una historia que contar.</p>
+                                <p class="signature">Con cariño, Tu familia</p>
+                            </div>
+                            <div class="page-number">i</div>
+                            <div class="page-corner"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Página 1 -->
+                    <div class="page" id="page-1">
+                        <div class="page-content">
+                            <div class="memory-title">Primer Recuerdo</div>
+                            
+                            <div class="memory-container">
+                                <div class="photo-frame">
+                                    <!-- La URL de la imagen se configurará desde script.js -->
+                                    <img src="" alt="Recuerdo especial" class="memory-photo">
+                                    <div class="tape tape-left"></div>
+                                    <div class="tape tape-right"></div>
+                                </div>
+                                <p class="memory-text">Aquí irá un mensaje especial que acompañe a esta foto...</p>
+                            </div>
+                            
+                            <div class="page-decoration">
+                                <div class="page-stamp"></div>
+                            </div>
+                            <div class="page-number">1</div>
+                            <div class="page-corner"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Página 2 -->
+                    <div class="page" id="page-2">
+                        <div class="page-content">
+                            <div class="memory-title">Momentos Mágicos</div>
+                            
+                            <div class="memory-container">
+                                <div class="photo-frame">
+                                    <img src="" alt="Recuerdo especial" class="memory-photo">
+                                    <div class="tape tape-left"></div>
+                                    <div class="tape tape-right"></div>
+                                </div>
+                                <p class="memory-text">Otro mensaje especial para esta foto...</p>
+                            </div>
+                            
+                            <div class="page-decoration">
+                                <div class="page-stamp"></div>
+                            </div>
+                            <div class="page-number">2</div>
+                            <div class="page-corner"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Página 3 -->
+                    <div class="page" id="page-3">
+                        <div class="page-content">
+                            <div class="memory-title">Sonrisas y Alegrías</div>
+                            
+                            <div class="memory-container">
+                                <div class="photo-frame">
+                                    <img src="" alt="Recuerdo especial" class="memory-photo">
+                                    <div class="tape tape-left"></div>
+                                    <div class="tape tape-right"></div>
+                                </div>
+                                <p class="memory-text">Un mensaje que capture este momento...</p>
+                            </div>
+                            
+                            <div class="page-decoration">
+                                <div class="page-stamp"></div>
+                            </div>
+                            <div class="page-number">3</div>
+                            <div class="page-corner"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Página final -->
+                    <div class="page final-page" id="final-page">
+                        <div class="page-content">
+                            <div class="final-title">Con todo mi cariño</div>
+                            <div class="final-message">
+                                <p>Cada recuerdo contigo es un tesoro que guardaré para siempre.</p>
+                                <p>Gracias por ser parte de mi historia.</p>
+                                <div class="final-hearts">
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-heart"></i>
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <p class="signature-big">Con amor, Tu Familia</p>
+                            </div>
+                            <div class="page-decoration">
+                                <div class="cobreloa-watermark"></div>
+                            </div>
+                            <div class="page-number">&#10084;</div>
+                            <div class="page-corner"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contracubierta -->
+                <div class="book-back-cover" id="book-back-cover">
+                    <div class="back-cover-inner">
+                        <div class="cobreloa-emblem"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles de navegación -->
+        <div class="book-controls">
+            <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i> Página anterior</button>
+            <button id="next-btn" class="nav-btn">Página siguiente <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
