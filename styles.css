@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #333;
     background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
     color: var(--text-color);
@@ -143,7 +143,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
     color: gold;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     width: 80%;
@@ -226,7 +227,8 @@ body {
 }
 
 .book-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 5rem;
     margin-bottom: 20px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
@@ -251,7 +253,7 @@ body {
 }
 
 .book-subtitle {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin-top: 10px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -382,41 +384,19 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-origin: left center;
-    transform-style: preserve-3d;
-    transition: transform var(--page-turn-speed) var(--page-turn-function);
-    background-color: var(--page-color);
+    transform-origin: left;
+    transition: all 0.3s ease-out;
+    background: #fff;
     border-radius: 0 10px 10px 0;
-    overflow: hidden;
-    backface-visibility: hidden;
-    box-shadow: inset -3px 0 15px rgba(0, 0, 0, 0.1);
-    border-right: 1px solid var(--page-border);
-    z-index: 5;
-    will-change: transform, box-shadow; /* Optimización para animaciones */
-    display: block;
-    opacity: 1;
-    backface-visibility: visible !important;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
     transform-style: preserve-3d;
-    perspective: 1200px;
-    transition: 
-        transform var(--page-turn-duration) var(--page-turn-function),
-        box-shadow var(--page-turn-duration) ease;
-    box-shadow: 0 0 0 rgba(0,0,0,0);
-    overflow: visible;
-    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    perspective: 2000px;
 }
 
 .page-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 50px 60px;
-    backface-visibility: hidden;
-    background-image: 
-        linear-gradient(to right, var(--page-color-light) 0%, var(--page-color) 8%, var(--page-color) 100%);
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 /* Efecto de doblez de página - parte frontal */
@@ -428,15 +408,13 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, 
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.01) 20%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(0, 0, 0, 0.02) 80%,
-        rgba(0, 0, 0, 0.05) 100%);
-    z-index: 2;
+        rgba(0,0,0,0.05) 0%,
+        rgba(0,0,0,0.01) 20%,
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.02) 80%,
+        rgba(0,0,0,0.05) 100%);
     pointer-events: none;
-    transition: opacity 0.5s ease;
-    backface-visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 /* Efecto de doblez de página - parte trasera */
@@ -463,14 +441,57 @@ body {
 }
 
 /* Sombra dinámica cuando la página está en transición */
-.page.turning {
-    animation: page-turn-shadow 1.2s var(--page-turn-function);
+.page-turning {
+    z-index: 1000;
 }
 
-@keyframes page-turn-shadow {
-    0% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
-    50% { box-shadow: -20px 0 25px rgba(0, 0, 0, 0.3); }
-    100% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+.page.turning {
+    z-index: 1000;
+}
+
+.page.turning::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.05) 20%,
+        rgba(0,0,0,0.02) 50%,
+        rgba(0,0,0,0.05) 80%,
+        rgba(0,0,0,0.15) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.page.turning.forward {
+    transform-origin: left;
+    transform: rotateY(-180deg) translateZ(2px);
+}
+
+.page.turning.backward {
+    transform-origin: right;
+    transform: rotateY(180deg) translateZ(2px);
+}
+
+.page-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,
+        rgba(0,0,0,0.1) 0%,
+        rgba(0,0,0,0) 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.page.turning .page-shadow {
+    opacity: 1;
 }
 
 /* Esquina de la página */
@@ -511,7 +532,8 @@ body {
 }
 
 .intro-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 3.5rem;
     color: var(--title-color);
     margin-bottom: 40px;
@@ -519,7 +541,7 @@ body {
 }
 
 .intro-text {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     line-height: 1.8;
     color: var(--text-color);
@@ -530,7 +552,8 @@ body {
 }
 
 .signature {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 1.8rem;
     margin-top: 40px;
     color: var(--cobreloa-orange-dark);
@@ -538,14 +561,10 @@ body {
 }
 
 .memory-title {
+    color: #333;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    color: var(--title-color);
-    margin-bottom: 30px;
     text-align: center;
-    border-bottom: 2px solid var(--cobreloa-orange-light);
-    padding-bottom: 10px;
-    position: relative;
+    margin: 20px 0;
 }
 
 .memory-title::after {
@@ -629,17 +648,10 @@ body {
 }
 
 .memory-text {
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.3rem;
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    text-align: center;
-    max-width: 90%;
-    padding: 15px 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 2;
+    padding: 15px;
 }
 
 .memory-text::before {
@@ -702,7 +714,8 @@ body {
 }
 
 .final-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 3rem;
     color: var(--title-color);
     margin-bottom: 30px;
@@ -710,7 +723,7 @@ body {
 }
 
 .final-message {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     line-height: 1.8;
     margin: 20px 0 40px;
@@ -744,7 +757,8 @@ body {
 }
 
 .signature-big {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     font-size: 2.2rem;
     margin-top: 30px;
     color: var(--cobreloa-orange-dark);
@@ -1240,30 +1254,27 @@ body {
 /* Mejorar la transición de páginas */
 .page.turned {
     transform: rotateY(-180deg);
-    transition: transform 1s cubic-bezier(.15,.85,.35,1.25);
-    box-shadow: -5px 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Confeti flotante permanente en las páginas */
 .confetti-bg {
-    position: absolute;
+    pointer-events: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    opacity: 0.3;
-    z-index: 1;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .confetti-piece {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: var(--color);
-    top: 0;
-    animation: confetti-fall 10s linear infinite;
-    opacity: 0.7;
+    background: #FFD700;
+    opacity: 0.6;
+    animation: fall 4s linear infinite;
 }
 
 @keyframes confetti-fall {
@@ -1403,30 +1414,27 @@ body {
 /* Mejorar la transición de páginas */
 .page.turned {
     transform: rotateY(-180deg);
-    transition: transform 1s cubic-bezier(.15,.85,.35,1.25);
-    box-shadow: -5px 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Confeti flotante permanente en las páginas */
 .confetti-bg {
-    position: absolute;
+    pointer-events: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    opacity: 0.3;
-    z-index: 1;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .confetti-piece {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: var(--color);
-    top: 0;
-    animation: confetti-fall 10s linear infinite;
-    opacity: 0.7;
+    background: #FFD700;
+    opacity: 0.6;
+    animation: fall 4s linear infinite;
 }
 
 @keyframes confetti-fall {
@@ -2034,7 +2042,7 @@ body {
 }
 
 .javier-says {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Montserrat', sans-serif;
     color: var(--cobreloa-orange-dark);
     font-size: 1.8rem;
     font-weight: bold;

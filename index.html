@@ -49,10 +49,18 @@
     
     <div class="book-environment">
         <!-- Elementos decorativos del ambiente -->
-        <div class="decoration top-left"></div>
-        <div class="decoration top-right"></div>
-        <div class="decoration bottom-left"></div>
-        <div class="decoration bottom-right"></div>
+        <div class="decoration top-left">
+            <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-animated-vector-young-soccer-player-character-png-image_11083898.png" alt="Decoración 1" class="decoration-image">
+        </div>
+        <div class="decoration top-right">
+            <img src="https://www.freeiconspng.com/uploads/goku-image-0.png" alt="Decoración 2" class="decoration-image">
+        </div>
+        <div class="decoration bottom-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Escudo_cobreloa.svg/1200px-Escudo_cobreloa.svg.png" alt="Decoración 3" class="decoration-image">
+        </div>
+        <div class="decoration bottom-right">
+            <img src="fotos/decoracion4.jpg" alt="Decoración 4" class="decoration-image">
+        </div>
         
         <!-- Contenedor principal del libro -->
         <div class="book-container">
@@ -106,92 +114,486 @@
                         </div>
                     </div>
                     
-                    <!-- Página 1 -->
-                    <div class="page" id="page-1">
-                        <div class="page-content">
-                            <div class="memory-title">Primer Recuerdo</div>
-                            
-                            <div class="memory-container">
-                                <div class="photo-frame">
-                                    <!-- La URL de la imagen se configurará desde script.js -->
-                                    <img src="" alt="Recuerdo especial" class="memory-photo">
-                                    <div class="tape tape-left"></div>
-                                    <div class="tape tape-right"></div>
+                    <!-- Páginas de recuerdos -->
+                    <div id="memory-pages">
+                        <!-- Página 1: Momentos en Familia -->
+                        <div class="page" id="page-1">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
                                 </div>
-                                <p class="memory-text">Aquí irá un mensaje especial que acompañe a esta foto...</p>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">1</div>
+                                <div class="page-corner"></div>
                             </div>
-                            
-                            <div class="page-decoration">
-                                <div class="page-stamp"></div>
-                            </div>
-                            <div class="page-number">1</div>
-                            <div class="page-corner"></div>
                         </div>
-                    </div>
-                    
-                    <!-- Página 2 -->
-                    <div class="page" id="page-2">
-                        <div class="page-content">
-                            <div class="memory-title">Momentos Mágicos</div>
-                            
-                            <div class="memory-container">
-                                <div class="photo-frame">
-                                    <img src="" alt="Recuerdo especial" class="memory-photo">
-                                    <div class="tape tape-left"></div>
-                                    <div class="tape tape-right"></div>
+
+                        <!-- Página 2: Familia es Todo -->
+                        <div class="page" id="page-2">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
                                 </div>
-                                <p class="memory-text">Otro mensaje especial para esta foto...</p>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">2</div>
+                                <div class="page-corner"></div>
                             </div>
-                            
-                            <div class="page-decoration">
-                                <div class="page-stamp"></div>
-                            </div>
-                            <div class="page-number">2</div>
-                            <div class="page-corner"></div>
                         </div>
-                    </div>
-                    
-                    <!-- Página 3 -->
-                    <div class="page" id="page-3">
-                        <div class="page-content">
-                            <div class="memory-title">Sonrisas y Alegrías</div>
-                            
-                            <div class="memory-container">
-                                <div class="photo-frame">
-                                    <img src="" alt="Recuerdo especial" class="memory-photo">
-                                    <div class="tape tape-left"></div>
-                                    <div class="tape tape-right"></div>
+
+                        <!-- Página 3 -->
+                        <div class="page" id="page-3">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
                                 </div>
-                                <p class="memory-text">Un mensaje que capture este momento...</p>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">3</div>
+                                <div class="page-corner"></div>
                             </div>
-                            
-                            <div class="page-decoration">
-                                <div class="page-stamp"></div>
-                            </div>
-                            <div class="page-number">3</div>
-                            <div class="page-corner"></div>
                         </div>
-                    </div>
-                    
-                    <!-- Página final -->
-                    <div class="page final-page" id="final-page">
-                        <div class="page-content">
-                            <div class="final-title">Con todo mi cariño</div>
-                            <div class="final-message">
-                                <p>Cada recuerdo contigo es un tesoro que guardaré para siempre.</p>
-                                <p>Gracias por ser parte de mi historia.</p>
-                                <div class="final-hearts">
-                                    <i class="fas fa-heart"></i>
-                                    <i class="fas fa-heart"></i>
-                                    <i class="fas fa-heart"></i>
+
+                        <!-- Página 4: Primos Unidos -->
+                        <div class="page" id="page-4">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
                                 </div>
-                                <p class="signature-big">Con amor, Tu Familia</p>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">4</div>
+                                <div class="page-corner"></div>
                             </div>
-                            <div class="page-decoration">
-                                <div class="cobreloa-watermark"></div>
+                        </div>
+
+                        <!-- Página 5: ¡Goleador! -->
+                        <div class="page" id="page-5">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">5</div>
+                                <div class="page-corner"></div>
                             </div>
-                            <div class="page-number">&#10084;</div>
-                            <div class="page-corner"></div>
+                        </div>
+
+                        <!-- Página 6: Diversión Familiar -->
+                        <div class="page" id="page-6">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">6</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 7: ¡Premio al Esfuerzo! -->
+                        <div class="page" id="page-7">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">7</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 8: Momentos Divertidos -->
+                        <div class="page" id="page-8">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">8</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 9: En el Estadio -->
+                        <div class="page" id="page-9">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">9</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 10: Primos del Alma -->
+                        <div class="page" id="page-10">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">10</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 11: Tía Querida -->
+                        <div class="page" id="page-11">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">11</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 12: Crack del Fútbol -->
+                        <div class="page" id="page-12">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">12</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 13: Siesta Improvisada -->
+                        <div class="page" id="page-13">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">13</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 14: Diversión Total -->
+                        <div class="page" id="page-14">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">14</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 15: Elegancia Pura -->
+                        <div class="page" id="page-15">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">15</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 16: ¡Campeón! -->
+                        <div class="page" id="page-16">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">16</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 17: Navidad en Familia -->
+                        <div class="page" id="page-17">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">17</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 18: Momento de Relax -->
+                        <div class="page" id="page-18">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">18</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 19: Siesta Familiar -->
+                        <div class="page" id="page-19">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">19</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 20: Casual y Feliz -->
+                        <div class="page" id="page-20">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">20</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 21: Recuerdos de Bebé -->
+                        <div class="page" id="page-21">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">21</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 22: Payaseando -->
+                        <div class="page" id="page-22">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">22</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+
+                        <!-- Página 23: ¡A la Piscina! -->
+                        <div class="page" id="page-23">
+                            <div class="page-content">
+                                <div class="memory-title"></div>
+                                <div class="memory-container">
+                                    <div class="photo-frame">
+                                        <img src="" alt="Recuerdo especial" class="memory-photo">
+                                        <div class="tape tape-left"></div>
+                                        <div class="tape tape-right"></div>
+                                    </div>
+                                    <p class="memory-text"></p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="page-stamp"></div>
+                                </div>
+                                <div class="page-number">23</div>
+                                <div class="page-corner"></div>
+                            </div>
+                        </div>
+                        <div class="page final-page" id="final-page">
+                            <div class="page-content">
+                                <div class="final-title">Con todo mi cariño</div>
+                                <div class="final-message">
+                                    <p>Cada recuerdo contigo es un tesoro que guardaré para siempre.</p>
+                                    <p>Gracias por ser parte de mi historia.</p>
+                                    <div class="final-hearts">
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-heart"></i>
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <p class="signature-big">Con amor, Tu Familia</p>
+                                </div>
+                                <div class="page-decoration">
+                                    <div class="cobreloa-watermark"></div>
+                                </div>
+                                <div class="page-number">&#10084;</div>
+                                <div class="page-corner"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
